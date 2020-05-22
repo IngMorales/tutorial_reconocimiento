@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECONOCIMIENTO DE VOZ | Javascript</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="annyang/src/annyang.js"></script>
+    <script src="speech/src/speechkitt.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        if (annyang) {
+            annyang.addCommands({
+                'mostrar un boton': function () {
+                    //alert('Hola el código esta funcionando');
+                    document.body.innerHTML += "<div><a href='#' class='btn btn-success'>Botón 1</a></div>";
+                }
+            });
+
+            SpeechKITT.annyang();
+            SpeechKITT.setStylesheet('speech/dist/themes/flat.css');
+            SpeechKITT.vroom();
+
+        }
+    </script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery.js"></script>
+</body>
+
+</html>

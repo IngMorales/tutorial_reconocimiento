@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECONOCIMIENTO DE VOZ | Javascript</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="annyang/src/annyang.js"></script>
+    <script src="speech/src/speechkitt.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        if (annyang) {
+            //Usar comandos
+            var comandos = {
+                'mostrar un boton': function () {
+                    //alert('Hola el código esta funcionando');
+                    document.body.innerHTML+="<div><a href='#' class='btn btn-success'>Botón 1</a></div>";
+                },
+                'mostrar imagen': function () {
+                    //alert('Hola el código esta funcionando');
+                    document.body.innerHTML+="<div><img src='img/img.jpg'></div>";
+                },
+                'cambiar fondo': function () {
+                    //alert('Hola el código esta funcionando');
+                    document.body.style.backgroundColor = 'red';
+                }
+            };
+        }
+        annyang.addCommands(comandos);
+        annyang.setLanguage("es-AR");
+        annyang.start();
+    </script>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="jquery/jquery.js"></script>
+</body>
+
+</html>
